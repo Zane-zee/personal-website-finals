@@ -1,0 +1,174 @@
+.hobbies-section {
+  padding: 5rem 0;
+}
+
+.hobbies-tabs {
+  margin-top: 3rem;
+}
+
+.tabs-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tab-btn {
+  padding: 1rem 2rem;
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--light-text);
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+}
+
+.tab-btn::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: var(--primary-color);
+  transition: var(--transition);
+}
+
+.tab-btn:hover {
+  color: var(--primary-color);
+}
+
+.tab-btn.active {
+  color: var(--primary-color);
+}
+
+.tab-btn.active::after {
+  width: 100%;
+}
+
+.tabs-content {
+  position: relative;
+  min-height: 400px;
+}
+
+.tab-pane {
+  display: none;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.tab-pane.active {
+  display: block;
+}
+
+.hobbies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.hobby-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  transition: var(--transition);
+}
+
+.hobby-icon {
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+  transition: var(--transition);
+}
+
+.hobby-card:hover .hobby-icon {
+  transform: scale(1.1);
+}
+
+.hobby-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.hobby-card p {
+  margin-bottom: 1.5rem;
+}
+
+.hobby-details {
+  width: 100%;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1rem;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.detail-label {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.hobbies-quote {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+blockquote {
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--primary-color);
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  padding: 2rem;
+}
+
+blockquote::before,
+blockquote::after {
+  content: '"';
+  font-size: 4rem;
+  position: absolute;
+  opacity: 0.1;
+  font-family: Georgia, serif;
+}
+
+blockquote::before {
+  top: -10px;
+  left: 0;
+}
+
+blockquote::after {
+  bottom: -30px;
+  right: 0;
+}
+
+blockquote cite {
+  display: block;
+  font-size: 1rem;
+  margin-top: 1rem;
+  color: var(--light-text);
+  font-style: normal;
+}
+
+@media (max-width: 768px) {
+  .tabs-header {
+    flex-direction: column;
+    align-items: center;
+    border-bottom: none;
+  }
+  
+  .tab-btn {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .tab-btn::after {
+    bottom: 0;
+  }
+} 
